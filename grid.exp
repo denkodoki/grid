@@ -1,0 +1,213 @@
+<defaults>
+/ fontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+/ screencolor = black
+/ txbgcolor = black
+/ txcolor = white
+</defaults>
+
+<expressions>
+/ randomState = rand(1,2)
+/ hposCorrection = display.height / display.width
+</expressions>
+
+<values>
+/ v11 = 0
+/ v12 = 0
+/ v13 = 0
+/ v14 = 0
+/ v21 = 0
+/ v22 = 0
+/ v23 = 0
+/ v24 = 0
+/ v31 = 0
+/ v32 = 0
+/ v33 = 0
+/ v34 = 0
+/ v41 = 0
+/ v42 = 0
+/ v43 = 0
+/ v44 = 0
+/ h11 = 0
+/ h12 = 0
+/ h13 = 0
+/ h14 = 0
+/ h21 = 0
+/ h22 = 0
+/ h23 = 0
+/ h24 = 0
+/ h31 = 0
+/ h32 = 0
+/ h33 = 0
+/ h34 = 0
+/ h41 = 0
+/ h42 = 0
+/ h43 = 0
+/ h44 = 0
+</values>
+
+<counter vpos>
+/ items = (35%,35%,35%,35%,45%,45%,45%,45%,55%,55%,55%,55%,65%,65%,65%,65%)
+/ select = sequence
+/ selectionrate = always
+</counter>
+
+<counter hpos>
+/ items = (35%,45%,55%,65%,35%,45%,55%,65%,35%,45%,55%,65%,35%,45%,55%,65%)
+/ select = current(vpos)
+</counter>
+
+<item nodeState>
+/ 1 = "*"
+/ 2 = "x"
+</item>
+
+<item beeps>
+/ 1 = "high.wav"
+/ 2 = "low.wav"
+</item>
+
+<sound beep>
+/ items = beeps
+/ select = expressions.randomState
+</sound>
+
+<text N11>
+/ items = nodeState
+/ vposition = values.v11
+/ hposition = values.h11
+/ select = expressions.randomState
+</text>
+
+<text N12>
+/ items = nodeState
+/ vposition = values.v12
+/ hposition = values.h12
+/ select = expressions.randomState
+</text>
+
+<text N13>
+/ items = nodeState
+/ vposition = values.v13
+/ hposition = values.h13
+/ select = expressions.randomState
+</text>
+
+<text N14>
+/ items = nodeState
+/ vposition = values.v14
+/ hposition = values.h14
+/ select = expressions.randomState
+</text>
+
+<text N21>
+/ items = nodeState
+/ vposition = values.v21
+/ hposition = values.h21
+/ select = expressions.randomState
+</text>
+
+<text N22>
+/ items = nodeState
+/ vposition = values.v22
+/ hposition = values.h22
+/ select = expressions.randomState
+</text>
+
+<text N23>
+/ items = nodeState
+/ vposition = values.v23
+/ hposition = values.h23
+/ select = expressions.randomState
+</text>
+
+<text N24>
+/ items = nodeState
+/ vposition = values.v24
+/ hposition = values.h24
+/ select = expressions.randomState
+</text>
+
+<text N31>
+/ items = nodeState
+/ vposition = values.v31
+/ hposition = values.h31
+/ select = expressions.randomState
+</text>
+
+<text N32>
+/ items = nodeState
+/ vposition = values.v32
+/ hposition = values.h32
+/ select = expressions.randomState
+</text>
+
+<text N33>
+/ items = nodeState
+/ vposition = values.v33
+/ hposition = values.h33
+/ select = expressions.randomState
+</text>
+
+<text N34>
+/ items = nodeState
+/ vposition = values.v34
+/ hposition = values.h34
+/ select = expressions.randomState
+</text>
+
+<text N41>
+/ items = nodeState
+/ vposition = values.v41
+/ hposition = values.h41
+/ select = expressions.randomState
+</text>
+
+<text N42>
+/ items = nodeState
+/ vposition = values.v42
+/ hposition = values.h42
+/ select = expressions.randomState
+</text>
+
+<text N43>
+/ items = nodeState
+/ vposition = values.v43
+/ hposition = values.h43
+/ select = expressions.randomState
+</text>
+
+<text N44>
+/ items = nodeState
+/ vposition = values.v44
+/ hposition = values.h44
+/ select = 2
+</text>
+
+<trial Show>
+/ inputdevice = keyboard
+/ stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1000=beep]
+/ validresponse = (" ")
+/ timeout = 2000
+</trial>
+
+<block mblock>
+/ onblockbegin = [
+    values.v11=counter.vpos.selectedvalue; values.h11=counter.hpos.selectedvalue;
+    values.v12=counter.vpos.selectedvalue; values.h12=counter.hpos.selectedvalue;
+    values.v13=counter.vpos.selectedvalue; values.h13=counter.hpos.selectedvalue;
+    values.v14=counter.vpos.selectedvalue; values.h14=counter.hpos.selectedvalue;
+    values.v21=counter.vpos.selectedvalue; values.h21=counter.hpos.selectedvalue;
+    values.v22=counter.vpos.selectedvalue; values.h22=counter.hpos.selectedvalue;
+    values.v23=counter.vpos.selectedvalue; values.h23=counter.hpos.selectedvalue;
+    values.v24=counter.vpos.selectedvalue; values.h24=counter.hpos.selectedvalue;
+    values.v31=counter.vpos.selectedvalue; values.h31=counter.hpos.selectedvalue;
+    values.v32=counter.vpos.selectedvalue; values.h32=counter.hpos.selectedvalue;
+    values.v33=counter.vpos.selectedvalue; values.h33=counter.hpos.selectedvalue;
+    values.v34=counter.vpos.selectedvalue; values.h34=counter.hpos.selectedvalue;
+    values.v41=counter.vpos.selectedvalue; values.h41=counter.hpos.selectedvalue;
+    values.v42=counter.vpos.selectedvalue; values.h42=counter.hpos.selectedvalue;
+    values.v43=counter.vpos.selectedvalue; values.h43=counter.hpos.selectedvalue;
+    values.v44=counter.vpos.selectedvalue; values.h44=counter.hpos.selectedvalue;
+]
+/ trials = [1,2,3,4,5,6,7,8,9,10=Show]
+</block>
