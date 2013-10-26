@@ -1,0 +1,85 @@
+<defaults>
+/ fontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+/ screencolor = black
+/ txbgcolor = black
+/ txcolor = white
+</defaults>
+
+<values >
+/ stateN11=		0
+/ stateN12 =	0
+/ stateT = 		0
+/ OK = 0
+</values>
+
+<counter stateN11>
+/ items = (1,1,2,2)
+/ select = noreplace
+/ selectionrate = always
+</counter>
+
+<counter stateN12>
+/ items = (1,2,1,2)
+/ select = current(stateN11)
+</counter>
+
+<counter stateT>
+/ items = (1,2,2,1)
+/ select = current(stateN11)
+</counter>
+
+<counter OK>
+/ items = (1,1,0,0)
+/ select = current(stateN11)
+</counter>
+
+<item nodeState>
+/ 1 = "+"
+/ 2 = "X"
+</item>
+
+<text N11>
+/ items = nodeState
+/ position = (10%,10%)
+/ select = values.stateN11
+</text>
+
+<text N12>
+/ items = nodeState
+/ position = (20%,10%)
+/ select = values.stateN12
+</text>
+
+<text OK>
+/ items = ("OK")
+/ position = (20%,20%)
+</text>
+
+<item tones>
+/ 1 = "tone_400Hz_-6dBFS_0.5s.wav"
+/ 2 = "tone_550Hz_-6dBFS_0.5s.wav"
+</item>
+
+<sound T>
+/ items = tones
+/ select = values.stateT
+</sound>
+
+<trial Show>
+/ ontrialbegin = [
+	values.stateN11=counter.stateN11.selectedvalue; 
+	values.stateN12=counter.stateN12.selectedvalue; 
+	values.stateT=counter.stateT.selectedvalue;
+     values.OK=counter.OK.selectedvalue; 
+]
+/ inputdevice = keyboard
+/ stimulustimes = [0 = N11,N12,T]
+/ validresponse = (" ", "n")
+/ iscorrectresponse = [values.OK]
+/ correctmessage = true(OK, 500)
+/ recorddata = false
+</trial>
+
+<block mblock>
+/ trials = [1-4=Show]
+</block>

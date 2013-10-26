@@ -7,7 +7,7 @@
 
 <expressions>
 / randomState = rand(1,2)
-/ hposCorrection = display.height / display.width
+/ randomBeep = rand(1,2)
 </expressions>
 
 <values>
@@ -43,6 +43,8 @@
 / h42 = 0
 / h43 = 0
 / h44 = 0
+/ state11 = 0
+/ sateGroup = counter.allSet
 </values>
 
 <counter vpos>
@@ -56,8 +58,24 @@
 / select = current(vpos)
 </counter>
 
+<counter allUnset>
+/ items = (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+/ select = sequence
+</counter>
+
+<counter allSet>
+/ items = (2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
+/ select = sequence
+</counter>
+
+<counter stateGroups>
+/ items = (allSet, allUnset)
+/ select = sequence
+/ selectionrate = trial
+</counter>
+
 <item nodeState>
-/ 1 = "*"
+/ 1 = "-"
 / 2 = "x"
 </item>
 
@@ -68,14 +86,14 @@
 
 <sound beep>
 / items = beeps
-/ select = expressions.randomState
+/ select = expressions.randomBeep
 </sound>
 
 <text N11>
 / items = nodeState
 / vposition = values.v11
 / hposition = values.h11
-/ select = expressions.randomState
+/ select =  values.state11
 </text>
 
 <text N12>
@@ -184,10 +202,15 @@
 </text>
 
 <trial Show>
+/ ontrialbegin = [
+	values.sateGroup =  getitem(counter.stateGroups, counter.stateGroups.selectedindex); 
+	values.state11 = getitem(values.sateGroup, 1); 
+]
 / inputdevice = keyboard
 / stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1000=beep]
 / validresponse = (" ")
-/ timeout = 2000
+/ timeout = 2000 
+/ recorddata = false
 </trial>
 
 <block mblock>
@@ -209,5 +232,5 @@
     values.v43=counter.vpos.selectedvalue; values.h43=counter.hpos.selectedvalue;
     values.v44=counter.vpos.selectedvalue; values.h44=counter.hpos.selectedvalue;
 ]
-/ trials = [1,2,3,4,5,6,7,8,9,10=Show]
+/ trials = [1,2,3,4=Show]
 </block>
