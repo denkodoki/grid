@@ -5,12 +5,8 @@
 / txcolor = white
 </defaults>
 
-<expressions>
-/ randomState = rand(1,2)
-/ randomBeep = rand(1,2)
-</expressions>
-
 <values>
+/ trialTimeout = 2000
 / v11 = 0
 / v12 = 0
 / v13 = 0
@@ -43,9 +39,47 @@
 / h42 = 0
 / h43 = 0
 / h44 = 0
-/ state11 = 0
-/ sateGroup = counter.allSet
+/ markN11 = 0
+/ markN12 = 0
+/ markN13 = 0
+/ markN14 = 0
+/ markN21 = 0
+/ markN22 = 0
+/ markN23 = 0
+/ markN24 = 0
+/ markN31 = 0
+/ markN32 = 0
+/ markN33 = 0
+/ markN34 = 0
+/ markN41 = 0
+/ markN42 = 0
+/ markN43 = 0
+/ markN44 = 0
+/ audioTarget = 0
+/ lastTone = 1
+/ currentTone = 2
+/ trialTarget = 0
 </values>
+
+
+# Audio Stimulus
+
+<counter audioTarget>
+/ items = (0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1,1,1)
+/ select = current(markN11)
+</counter>
+
+<item tones>
+/ 1 = "tone_400Hz_-6dBFS_0.5s.wav"
+/ 2 = "tone_550Hz_-6dBFS_0.5s.wav"
+</item>
+
+<sound A>
+/ items = tones
+/ select = values.currentTone
+</sound>
+
+# Visual Stimulus
 
 <counter vpos>
 / items = (35%,35%,35%,35%,45%,45%,45%,45%,55%,55%,55%,55%,65%,65%,65%,65%)
@@ -58,160 +92,247 @@
 / select = current(vpos)
 </counter>
 
-<counter allUnset>
-/ items = (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+<counter markN11>
+/ items = (2,1,1,2,1,1,1,2,2,2,1,2,2,2,2,1,2,2,1,2,2,1,2,2,1,2,1,2,1,2,2,2,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,2,2,2,1,2,2,2,1,1,1,2,1,2,1,1,1,1,2,1,2,1,2,1,1,1,1,1,2)
 / select = sequence
+/ selectionrate = always
 </counter>
 
-<counter allSet>
-/ items = (2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
-/ select = sequence
+<counter markN12>
+/ items = (2,2,2,1,2,1,1,1,2,1,2,1,1,1,2,1,2,1,2,1,2,2,2,1,1,2,2,1,1,1,2,2,1,2,1,1,1,1,1,2,1,2,2,2,1,1,1,2,1,2,1,1,2,1,2,1,2,2,2,1,2,1,2,1,2,1,1,2,2,2,2,2,1,1,1)
+/ select = current(markN11)
 </counter>
 
-<counter stateGroups>
-/ items = (allSet, allUnset)
-/ select = sequence
-/ selectionrate = trial
+<counter markN13>
+/ items = (1,2,1,2,2,1,2,2,2,1,1,2,2,2,1,1,1,1,1,2,2,1,2,1,1,2,1,1,2,2,2,1,2,1,2,2,1,2,1,2,2,1,2,2,1,1,1,1,2,2,1,1,2,1,2,1,2,1,1,2,1,2,2,2,1,1,2,2,1,1,1,2,2,1,2)
+/ select = current(markN11)
 </counter>
 
-<item nodeState>
+<counter markN14>
+/ items = (2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2,2,1,2,2,1,1,1,2,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,2,1,1,1,1,2,2,1,2,2,2,2,2,2,1,1,1,1,2,1,2,1,1,1,2,1,1,1,2,1,1,2,2,2,2)
+/ select = current(markN11)
+</counter>
+
+<counter markN21>
+/ items = (1,1,2,2,2,1,2,1,1,2,2,1,2,2,1,1,1,2,2,2,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,2,2,1,1,2,1,2,2,1,1,1,1,1,1,1,1,2,1,2,2,2,2,1,2,2,1,2,2,1,1,1,1,1,2,1,2,2,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN22>
+/ items = (1,2,1,2,1,1,1,1,2,2,1,1,2,2,2,1,2,2,2,2,2,2,2,2,1,1,2,1,2,2,1,2,1,1,1,2,2,1,1,1,1,2,2,1,1,2,2,2,2,1,2,2,1,1,1,2,1,1,2,2,2,1,1,1,1,2,1,2,2,2,1,1,1,1,2)
+/ select = current(markN11)
+</counter>
+
+<counter markN23>
+/ items = (2,2,1,2,1,2,1,2,2,2,1,2,1,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,1,1,2,2,2,1,2,2,2,2,1,2,1,2,2,1,2,1,2,1,1,2,1,2,2,1,2,1,1,2,2,1,1,2,2,1,2,1,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN24>
+/ items = (2,1,2,2,2,1,1,2,1,1,2,1,1,1,1,2,1,2,1,2,1,1,2,2,2,2,2,1,1,1,1,2,1,2,2,1,2,1,2,1,1,2,1,2,1,1,2,2,2,2,1,1,2,1,2,1,1,1,1,1,2,2,1,2,1,1,1,2,1,2,1,2,1,2,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN31>
+/ items = (2,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,2,2,2,1,1,1,1,2,2,1,2,1,1,2,1,2,1,2,2,1,2,2,1,1,2,2,2,1,1,1,1,2,2,1,2,2,2,1,1,2,2,1,1,1,2,2,2,2,2,2,2,2,2,1,1,1,2,2)
+/ select = current(markN11)
+</counter>
+
+<counter markN32>
+/ items = (1,2,2,2,1,2,2,1,2,2,1,1,1,1,1,2,2,2,2,1,1,2,1,1,2,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,1,2,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2,2)
+/ select = current(markN11)
+</counter>
+
+<counter markN33>
+/ items = (1,1,1,1,2,2,1,1,1,1,1,1,2,1,2,2,1,2,1,2,2,1,1,2,1,1,1,2,1,1,1,2,2,2,2,1,2,1,2,1,1,2,2,2,1,1,2,1,1,1,2,1,1,2,1,2,1,2,2,1,1,1,1,2,2,1,1,2,2,2,2,2,1,1,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN34>
+/ items = (1,2,1,2,2,2,1,1,1,2,2,2,1,1,1,2,2,2,2,2,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,2,1,1,2,1,2,2,2,1,1,2,2,1,1,2,2,1,2,2,2,2,1,1,1,1,1,2,1,1,2,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN41>
+/ items = (2,2,2,1,1,1,2,1,2,2,2,1,2,1,2,1,2,1,1,1,1,1,1,2,1,2,1,2,2,2,1,2,2,2,1,1,2,2,2,1,2,2,2,1,1,2,1,2,1,1,2,2,1,1,1,2,1,1,1,1,1,1,2,2,2,2,1,2,1,1,2,2,2,1,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN42>
+/ items = (1,1,2,1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,1,1,2,2,1,2,2,2,2,2,2,1,1,2,1,1,1,1,2,1,1,2,2,1,2,2,2,1,1,2,1,1,2,2,2,2,2,1,1,1,1,2,1,1,2,2,1,1,2,2,2,1,1,2,1,2)
+/ select = current(markN11)
+</counter>
+
+<counter markN43>
+/ items = (1,1,2,1,1,1,1,2,1,1,1,1,2,1,2,2,1,1,2,1,2,2,2,2,2,1,1,2,1,2,1,1,2,2,2,2,2,2,1,1,1,1,2,1,1,2,2,1,2,2,1,2,1,1,2,1,2,2,1,1,2,1,2,1,2,2,2,2,1,1,1,2,1,2,1)
+/ select = current(markN11)
+</counter>
+
+<counter markN44>
+/ items = (2,1,1,2,1,1,2,1,1,2,2,2,1,2,2,1,1,2,1,1,1,2,2,1,1,1,1,2,2,2,1,2,2,2,2,1,2,2,2,2,1,2,2,2,2,2,1,1,1,1,2,2,1,1,1,2,1,1,1,2,1,2,2,2,1,2,2,1,1,1,1,2,1,1,2)
+/ select = current(markN11)
+</counter>
+
+<item visualMark>
 / 1 = "-"
 / 2 = "x"
 </item>
 
-<item beeps>
-/ 1 = "high.wav"
-/ 2 = "low.wav"
-</item>
-
-<sound beep>
-/ items = beeps
-/ select = expressions.randomBeep
-</sound>
-
 <text N11>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v11
 / hposition = values.h11
-/ select =  values.state11
+/ select =  values.markN11
 </text>
 
 <text N12>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v12
 / hposition = values.h12
-/ select = expressions.randomState
+/ select = values.markN12
 </text>
 
 <text N13>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v13
 / hposition = values.h13
-/ select = expressions.randomState
+/ select = values.markN13
 </text>
 
 <text N14>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v14
 / hposition = values.h14
-/ select = expressions.randomState
+/ select = values.markN14
 </text>
 
 <text N21>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v21
 / hposition = values.h21
-/ select = expressions.randomState
+/ select = values.markN21
 </text>
 
 <text N22>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v22
 / hposition = values.h22
-/ select = expressions.randomState
+/ select = values.markN22
 </text>
 
 <text N23>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v23
 / hposition = values.h23
-/ select = expressions.randomState
+/ select = values.markN23
 </text>
 
 <text N24>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v24
 / hposition = values.h24
-/ select = expressions.randomState
+/ select = values.markN24
 </text>
 
 <text N31>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v31
 / hposition = values.h31
-/ select = expressions.randomState
+/ select = values.markN31
 </text>
 
 <text N32>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v32
 / hposition = values.h32
-/ select = expressions.randomState
+/ select = values.markN32
 </text>
 
 <text N33>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v33
 / hposition = values.h33
-/ select = expressions.randomState
+/ select = values.markN33
 </text>
 
 <text N34>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v34
 / hposition = values.h34
-/ select = expressions.randomState
+/ select = values.markN34
 </text>
 
 <text N41>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v41
 / hposition = values.h41
-/ select = expressions.randomState
+/ select = values.markN41
 </text>
 
 <text N42>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v42
 / hposition = values.h42
-/ select = expressions.randomState
+/ select = values.markN42
 </text>
 
 <text N43>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v43
 / hposition = values.h43
-/ select = expressions.randomState
+/ select = values.markN43
 </text>
 
 <text N44>
-/ items = nodeState
+/ items = visualMark
 / vposition = values.v44
 / hposition = values.h44
-/ select = 2
+/ select = values.markN44
 </text>
+
+# Trial
+
+<counter trialTarget>
+/ items = (1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,0,1,1,0,1,0,0,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1,1,1)
+/ select = current(markN11)
+</counter>
 
 <trial Show>
 / ontrialbegin = [
-	values.sateGroup =  getitem(counter.stateGroups, counter.stateGroups.selectedindex); 
-	values.state11 = getitem(values.sateGroup, 1); 
+	values.markN11=counter.markN11.selectedvalue; 
+	values.markN12=counter.markN12.selectedvalue; 
+	values.markN13=counter.markN13.selectedvalue; 
+	values.markN14=counter.markN14.selectedvalue; 
+	values.markN21=counter.markN21.selectedvalue; 
+	values.markN22=counter.markN22.selectedvalue; 
+	values.markN23=counter.markN23.selectedvalue; 
+	values.markN24=counter.markN24.selectedvalue; 
+	values.markN31=counter.markN31.selectedvalue; 
+	values.markN32=counter.markN32.selectedvalue; 
+	values.markN33=counter.markN33.selectedvalue; 
+	values.markN34=counter.markN34.selectedvalue; 
+	values.markN41=counter.markN41.selectedvalue; 
+	values.markN42=counter.markN42.selectedvalue; 
+	values.markN43=counter.markN43.selectedvalue; 
+	values.markN44=counter.markN44.selectedvalue;
+	values.trialTarget= counter.trialTarget.selectedvalue;
+	values.audioTarget=counter.audioTarget.selectedvalue;
+	if(values.audioTarget) values.currentTone = values.lastTone;
+	if(!values.audioTarget && values.lastTone == 1) values.currentTone = 2;
+	if(!values.audioTarget && values.lastTone == 2) values.currentTone = 1;
 ]
+/ stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1=A]
 / inputdevice = keyboard
-/ stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1000=beep]
 / validresponse = (" ")
-/ timeout = 2000 
-/ recorddata = false
+/ iscorrectresponse = [values.trialTarget && trial.Show.response == " " || ! values.trialTarget && trial.Show.response == ""]
+/ recorddata = true
+/ timeout = values.trialTimeout
+/ ontrialend = [
+	values.lastTone = values.currentTone
+]
 </trial>
+
+# Block
 
 <block mblock>
 / onblockbegin = [
@@ -232,5 +353,9 @@
     values.v43=counter.vpos.selectedvalue; values.h43=counter.hpos.selectedvalue;
     values.v44=counter.vpos.selectedvalue; values.h44=counter.hpos.selectedvalue;
 ]
-/ trials = [1,2,3,4=Show]
+/ trials = [1-75=Show]
 </block>
+
+<data>
+/ format = comma
+</data>

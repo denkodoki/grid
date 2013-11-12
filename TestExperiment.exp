@@ -14,7 +14,7 @@
 
 <counter stateN11>
 / items = (1,1,2,2)
-/ select = noreplace
+/ select = sequence
 / selectionrate = always
 </counter>
 
@@ -70,7 +70,7 @@
 	values.stateN11=counter.stateN11.selectedvalue; 
 	values.stateN12=counter.stateN12.selectedvalue; 
 	values.stateT=counter.stateT.selectedvalue;
-     values.OK=counter.OK.selectedvalue; 
+    values.OK=counter.OK.selectedvalue; 
 ]
 / inputdevice = keyboard
 / stimulustimes = [0 = N11,N12,T]
@@ -82,4 +82,8 @@
 
 <block mblock>
 / trials = [1-4=Show]
-</block>
+/block>
+
+<data>
+/ format = comma
+</data>
