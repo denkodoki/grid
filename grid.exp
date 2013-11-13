@@ -316,12 +316,14 @@
 # Block
 
 <page IPage>
-^^ height = <% display.height %>
-^^ width = <% display.width %>
-^^ posV1 = <% values.posV1 %>
-^^ posV2 = <% values.posV2 %>
-^^ posH1 = <% values.posH1 %>
-^^ posH2 = <% values.posH2 %>
+A teszt két feladatból Áll.
+^^Az egyik feladat:
+^A képernyõ egy részén változó számú keresztek fognak megjeleni. 
+Ha ezek a keresztek egy négyzetet alkotnak, kérem, nyomja meg a szóköz ( space) billentyût, amilyen gyorsan csak lehet.
+^^A másik feladat:
+^Ebben a feladatban magas és mély tónusú szekvenciákat fog hallani. 
+Ha az egyik szekvenciát kétszer egymás után hallja kérem , nyomja le a szóköz (space) billentyût amilyen gyorsan tudja.
+^^Az ön feladata, hogy a hangokra és a négyzetekre egyszerre figyeljen
 </page>
 
 <block mblock>
