@@ -324,7 +324,7 @@
 / stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1=A]
 / inputdevice = keyboard
 / validresponse = (" ")
-/ iscorrectresponse = [values.trialTarget && trial.Show.response == " " || ! values.trialTarget && trial.Show.response == ""]
+/ iscorrectresponse = [values.trialTarget && trial.Show.response == 57 || ! values.trialTarget && trial.Show.response == 0]
 / recorddata = true
 / timeout = values.trialTimeout
 / ontrialend = [
