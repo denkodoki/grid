@@ -22,7 +22,7 @@
 </expressions>
 
 <values>
-/ trialTimeout = 2000
+/ trialTimeout = 2500
 / posV1 = 0
 / posV2 = 0
 / posV3 = 0
@@ -302,7 +302,7 @@
 	if(!values.audioTarget && values.lastTone == 1) values.currentTone = 2;
 	if(!values.audioTarget && values.lastTone == 2) values.currentTone = 1;
 ]
-/ stimulustimes = [0 = N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 1=A]
+/ stimulustimes = [500=N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 500=A]
 / inputdevice = keyboard
 / validresponse = (" ")
 / iscorrectresponse = [values.trialTarget && trial.Show.response == 57 || ! values.trialTarget && trial.Show.response == 0]
