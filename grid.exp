@@ -5,40 +5,32 @@
 / txcolor = white
 </defaults>
 
+<expressions>
+/ widthHeightScale = display.width/display.height
+/ cellWidth = 6
+/ cellHeigth = cellWidth * widthHeightScale
+/ posLeft = (100 - (cellWidth * 3)) / 2
+/ posH1 = posLeft
+/ posH2 = posLeft + cellWidth
+/ posH3 = posLeft + (cellWidth * 2)
+/ posH4 = posLeft + (cellWidth * 3)
+/ posTop = (100 - (cellHeigth * 3)) / 2
+/ posV1 = posTop
+/ posV2 = posTop + cellHeigth
+/ posV3 = posTop + (cellHeigth * 2)
+/ posV4 = posTop + (cellHeigth * 3)
+</expressions>
+
 <values>
 / trialTimeout = 2000
-/ v11 = 0
-/ v12 = 0
-/ v13 = 0
-/ v14 = 0
-/ v21 = 0
-/ v22 = 0
-/ v23 = 0
-/ v24 = 0
-/ v31 = 0
-/ v32 = 0
-/ v33 = 0
-/ v34 = 0
-/ v41 = 0
-/ v42 = 0
-/ v43 = 0
-/ v44 = 0
-/ h11 = 0
-/ h12 = 0
-/ h13 = 0
-/ h14 = 0
-/ h21 = 0
-/ h22 = 0
-/ h23 = 0
-/ h24 = 0
-/ h31 = 0
-/ h32 = 0
-/ h33 = 0
-/ h34 = 0
-/ h41 = 0
-/ h42 = 0
-/ h43 = 0
-/ h44 = 0
+/ posV1 = 0
+/ posV2 = 0
+/ posV3 = 0
+/ posV4 = 0
+/ posH1 = 0
+/ posH2 = 0
+/ posH3 = 0
+/ posH4 = 0
 / markN11 = 0
 / markN12 = 0
 / markN13 = 0
@@ -80,17 +72,6 @@
 </sound>
 
 # Visual Stimulus
-
-<counter vpos>
-/ items = (35%,35%,35%,35%,45%,45%,45%,45%,55%,55%,55%,55%,65%,65%,65%,65%)
-/ select = sequence
-/ selectionrate = always
-</counter>
-
-<counter hpos>
-/ items = (35%,45%,55%,65%,35%,45%,55%,65%,35%,45%,55%,65%,35%,45%,55%,65%)
-/ select = current(vpos)
-</counter>
 
 <counter markN11>
 / items = (2,1,1,2,1,1,1,2,2,2,1,2,2,2,2,1,2,2,1,2,2,1,2,2,1,2,1,2,1,2,2,2,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,2,2,2,1,2,2,2,1,1,1,2,1,2,1,1,1,1,2,1,2,1,2,1,1,1,1,1,2)
@@ -180,113 +161,113 @@
 
 <text N11>
 / items = visualMark
-/ vposition = values.v11
-/ hposition = values.h11
+/ vposition = values.posV1
+/ hposition = values.posH1
 / select =  values.markN11
 </text>
 
 <text N12>
 / items = visualMark
-/ vposition = values.v12
-/ hposition = values.h12
+/ vposition = values.posV1
+/ hposition = values.posH2
 / select = values.markN12
 </text>
 
 <text N13>
 / items = visualMark
-/ vposition = values.v13
-/ hposition = values.h13
+/ vposition = values.posV1
+/ hposition = values.posH3
 / select = values.markN13
 </text>
 
 <text N14>
 / items = visualMark
-/ vposition = values.v14
-/ hposition = values.h14
+/ vposition = values.posV1
+/ hposition = values.posH4
 / select = values.markN14
 </text>
 
 <text N21>
 / items = visualMark
-/ vposition = values.v21
-/ hposition = values.h21
+/ vposition = values.posV2
+/ hposition = values.posH1
 / select = values.markN21
 </text>
 
 <text N22>
 / items = visualMark
-/ vposition = values.v22
-/ hposition = values.h22
+/ vposition = values.posV2
+/ hposition = values.posH2
 / select = values.markN22
 </text>
 
 <text N23>
 / items = visualMark
-/ vposition = values.v23
-/ hposition = values.h23
+/ vposition = values.posV2
+/ hposition = values.posH3
 / select = values.markN23
 </text>
 
 <text N24>
 / items = visualMark
-/ vposition = values.v24
-/ hposition = values.h24
+/ vposition = values.posV2
+/ hposition = values.posH4
 / select = values.markN24
 </text>
 
 <text N31>
 / items = visualMark
-/ vposition = values.v31
-/ hposition = values.h31
+/ vposition = values.posV3
+/ hposition = values.posH1
 / select = values.markN31
 </text>
 
 <text N32>
 / items = visualMark
-/ vposition = values.v32
-/ hposition = values.h32
+/ vposition = values.posV3
+/ hposition = values.posH2
 / select = values.markN32
 </text>
 
 <text N33>
 / items = visualMark
-/ vposition = values.v33
-/ hposition = values.h33
+/ vposition = values.posV3
+/ hposition = values.posH3
 / select = values.markN33
 </text>
 
 <text N34>
 / items = visualMark
-/ vposition = values.v34
-/ hposition = values.h34
+/ vposition = values.posV3
+/ hposition = values.posH4
 / select = values.markN34
 </text>
 
 <text N41>
 / items = visualMark
-/ vposition = values.v41
-/ hposition = values.h41
+/ vposition = values.posV4
+/ hposition = values.posH1
 / select = values.markN41
 </text>
 
 <text N42>
 / items = visualMark
-/ vposition = values.v42
-/ hposition = values.h42
+/ vposition = values.posV4
+/ hposition = values.posH2
 / select = values.markN42
 </text>
 
 <text N43>
 / items = visualMark
-/ vposition = values.v43
-/ hposition = values.h43
+/ vposition = values.posV4
+/ hposition = values.posH3
 / select = values.markN43
 </text>
 
 <text N44>
 / items = visualMark
-/ vposition = values.v44
-/ hposition = values.h44
+/ vposition = values.posV4
+/ hposition = values.posH4
 / select = values.markN44
 </text>
 
@@ -334,24 +315,26 @@
 
 # Block
 
+<page IPage>
+^^ height = <% display.height %>
+^^ width = <% display.width %>
+^^ posV1 = <% values.posV1 %>
+^^ posV2 = <% values.posV2 %>
+^^ posH1 = <% values.posH1 %>
+^^ posH2 = <% values.posH2 %>
+</page>
+
 <block mblock>
+/ preinstructions = (IPage)
 / onblockbegin = [
-    values.v11=counter.vpos.selectedvalue; values.h11=counter.hpos.selectedvalue;
-    values.v12=counter.vpos.selectedvalue; values.h12=counter.hpos.selectedvalue;
-    values.v13=counter.vpos.selectedvalue; values.h13=counter.hpos.selectedvalue;
-    values.v14=counter.vpos.selectedvalue; values.h14=counter.hpos.selectedvalue;
-    values.v21=counter.vpos.selectedvalue; values.h21=counter.hpos.selectedvalue;
-    values.v22=counter.vpos.selectedvalue; values.h22=counter.hpos.selectedvalue;
-    values.v23=counter.vpos.selectedvalue; values.h23=counter.hpos.selectedvalue;
-    values.v24=counter.vpos.selectedvalue; values.h24=counter.hpos.selectedvalue;
-    values.v31=counter.vpos.selectedvalue; values.h31=counter.hpos.selectedvalue;
-    values.v32=counter.vpos.selectedvalue; values.h32=counter.hpos.selectedvalue;
-    values.v33=counter.vpos.selectedvalue; values.h33=counter.hpos.selectedvalue;
-    values.v34=counter.vpos.selectedvalue; values.h34=counter.hpos.selectedvalue;
-    values.v41=counter.vpos.selectedvalue; values.h41=counter.hpos.selectedvalue;
-    values.v42=counter.vpos.selectedvalue; values.h42=counter.hpos.selectedvalue;
-    values.v43=counter.vpos.selectedvalue; values.h43=counter.hpos.selectedvalue;
-    values.v44=counter.vpos.selectedvalue; values.h44=counter.hpos.selectedvalue;
+	values.posV1 = expressions.posV1;
+	values.posV2 = expressions.posV2;
+	values.posV3 = expressions.posV3;
+	values.posV4 = expressions.posV4;
+	values.posH1 = expressions.posH1;
+	values.posH2 = expressions.posH2;
+	values.posH3 = expressions.posH3;
+	values.posH4 = expressions.posH4;
 ]
 / trials = [1-75=Show]
 </block>
