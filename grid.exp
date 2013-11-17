@@ -23,6 +23,8 @@
 
 <values>
 / trialTimeout = 2500
+/ noreplace = 6
+/ sequence = 16
 / posV1 = 0
 / posV2 = 0
 / posV3 = 0
@@ -57,7 +59,7 @@
 # Audio Stimulus
 
 <counter audioTarget>
-/ items = (0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1,1,1)
+/ items = (0,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0,0,1,0,0,0,0,0,1,0,1,0,1,1,0,1,1,0,0,1,1,0,0,1,0,1,0,1,0,0,0,0,0,0)
 / select = current(markN11)
 </counter>
 
@@ -74,83 +76,83 @@
 # Visual Stimulus
 
 <counter markN11>
-/ items = (2,1,1,2,1,1,1,2,2,2,1,2,2,2,2,1,2,2,1,2,2,1,2,2,1,2,1,2,1,2,2,2,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,2,2,2,1,2,2,2,1,1,1,2,1,2,1,1,1,1,2,1,2,1,2,1,1,1,1,1,2)
-/ select = sequence
+/ items = (2,1,1,1,2,1,1,1,2,1,2,2,1,2,1,1,2,2,1,2,2,2,2,1,2,1,1,1,1,2,2,1,1,2,2,2,2,1,2,1,2,2,2,1,1,1,2,1,1,2,1,2,1,2,2,2,2,1,2,1,1,1,1,2,2,1,2,1,2,1,2,2,1,2,1)
+/ select = noreplace
 / selectionrate = always
 </counter>
 
 <counter markN12>
-/ items = (2,2,2,1,2,1,1,1,2,1,2,1,1,1,2,1,2,1,2,1,2,2,2,1,1,2,2,1,1,1,2,2,1,2,1,1,1,1,1,2,1,2,2,2,1,1,1,2,1,2,1,1,2,1,2,1,2,2,2,1,2,1,2,1,2,1,1,2,2,2,2,2,1,1,1)
+/ items = (1,2,1,2,1,2,2,1,2,2,2,2,2,2,2,1,1,1,2,1,2,1,2,1,2,2,1,1,1,2,1,2,2,1,1,1,2,1,2,1,1,2,1,2,2,2,1,1,2,2,2,2,1,1,2,2,1,1,1,1,2,2,2,1,2,1,2,1,1,1,1,1,1,1,2)
 / select = current(markN11)
 </counter>
 
 <counter markN13>
-/ items = (1,2,1,2,2,1,2,2,2,1,1,2,2,2,1,1,1,1,1,2,2,1,2,1,1,2,1,1,2,2,2,1,2,1,2,2,1,2,1,2,2,1,2,2,1,1,1,1,2,2,1,1,2,1,2,1,2,1,1,2,1,2,2,2,1,1,2,2,1,1,1,2,2,1,2)
+/ items = (2,2,1,2,1,2,2,2,2,2,1,1,2,2,2,2,2,1,1,1,1,1,1,2,2,1,1,1,2,1,1,1,2,2,1,2,2,2,1,1,1,1,2,1,1,1,1,2,2,2,1,1,1,2,1,1,1,2,1,1,1,1,1,2,2,2,1,2,2,1,1,2,1,1,2)
 / select = current(markN11)
 </counter>
 
 <counter markN14>
-/ items = (2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2,2,1,2,2,1,1,1,2,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,2,2,1,1,1,1,2,2,1,2,2,2,2,2,2,1,1,1,1,2,1,2,1,1,1,2,1,1,1,2,1,1,2,2,2,2)
+/ items = (2,2,2,2,2,1,1,1,1,2,1,1,1,1,1,1,2,1,2,1,1,2,2,2,1,2,1,2,2,1,2,1,1,1,2,1,1,1,2,2,1,2,2,1,2,1,1,2,1,1,2,1,1,1,1,1,2,2,2,1,2,2,1,2,2,2,2,2,1,2,1,1,2,2,1)
 / select = current(markN11)
 </counter>
 
 <counter markN21>
-/ items = (1,1,2,2,2,1,2,1,1,2,2,1,2,2,1,1,1,2,2,2,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,2,2,1,1,2,1,2,2,1,1,1,1,1,1,1,1,2,1,2,2,2,2,1,2,2,1,2,2,1,1,1,1,1,2,1,2,2,1)
+/ items = (1,2,1,2,2,2,1,1,1,2,2,2,1,2,2,1,1,1,1,2,1,2,2,1,1,1,2,1,1,1,2,2,2,1,2,1,2,1,2,2,1,1,1,1,1,1,2,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,2,2,1,1,1,1,1,1,1,2,1,2)
 / select = current(markN11)
 </counter>
 
 <counter markN22>
-/ items = (1,2,1,2,1,1,1,1,2,2,1,1,2,2,2,1,2,2,2,2,2,2,2,2,1,1,2,1,2,2,1,2,1,1,1,2,2,1,1,1,1,2,2,1,1,2,2,2,2,1,2,2,1,1,1,2,1,1,2,2,2,1,1,1,1,2,1,2,2,2,1,1,1,1,2)
+/ items = (1,1,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,1,1,2,1,2,2,2,1,2,1,1,1,2,1,2,2,1,2,2,1,2,2,1,2,2,2,1,2,2,2,2,2,1,1,2,1,1,1,2,1,2,1,1,2,1,1,1,2,1,1,2,2,2,1,1,2,2)
 / select = current(markN11)
 </counter>
 
 <counter markN23>
-/ items = (2,2,1,2,1,2,1,2,2,2,1,2,1,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,1,1,2,2,2,1,2,2,2,2,1,2,1,2,2,1,2,1,2,1,1,2,1,2,2,1,2,1,1,2,2,1,1,2,2,1,2,1,1)
+/ items = (1,1,2,1,2,1,2,1,1,1,1,1,2,2,2,2,1,1,1,2,2,2,1,1,2,2,2,1,1,2,2,2,2,2,2,1,1,2,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,2,2,2,2,2,2,1,2,1,1,2,1,2,1,1,1,1)
 / select = current(markN11)
 </counter>
 
 <counter markN24>
-/ items = (2,1,2,2,2,1,1,2,1,1,2,1,1,1,1,2,1,2,1,2,1,1,2,2,2,2,2,1,1,1,1,2,1,2,2,1,2,1,2,1,1,2,1,2,1,1,2,2,2,2,1,1,2,1,2,1,1,1,1,1,2,2,1,2,1,1,1,2,1,2,1,2,1,2,1)
+/ items = (2,2,2,1,2,2,1,2,2,1,1,1,2,1,2,1,1,2,1,1,1,2,1,1,1,1,2,2,2,2,1,2,2,2,1,2,1,2,1,1,2,1,2,1,2,2,1,2,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,1,1,2,2,1,2,1,1,1,1,2)
 / select = current(markN11)
 </counter>
 
 <counter markN31>
-/ items = (2,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,2,2,2,1,1,1,1,2,2,1,2,1,1,2,1,2,1,2,2,1,2,2,1,1,2,2,2,1,1,1,1,2,2,1,2,2,2,1,1,2,2,1,1,1,2,2,2,2,2,2,2,2,2,1,1,1,2,2)
+/ items = (1,2,2,1,1,2,2,2,1,2,1,2,1,1,1,2,2,1,2,1,2,2,1,1,2,1,1,2,2,1,1,2,2,2,2,1,1,2,2,1,2,2,2,1,2,2,2,2,1,1,2,1,2,1,2,2,1,1,2,2,2,1,1,2,1,1,1,2,1,1,1,1,1,1,1)
 / select = current(markN11)
 </counter>
 
 <counter markN32>
-/ items = (1,2,2,2,1,2,2,1,2,2,1,1,1,1,1,2,2,2,2,1,1,2,1,1,2,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,2,1,2,1,1,2,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2,2)
+/ items = (2,2,1,1,1,1,1,1,2,1,2,1,2,1,1,1,2,1,1,2,2,1,2,2,2,1,1,2,1,1,1,1,1,2,1,1,2,1,1,2,1,1,1,2,2,1,2,1,1,2,1,2,1,2,2,2,1,1,1,1,2,1,1,2,2,1,1,2,1,2,1,2,2,1,1)
 / select = current(markN11)
 </counter>
 
 <counter markN33>
-/ items = (1,1,1,1,2,2,1,1,1,1,1,1,2,1,2,2,1,2,1,2,2,1,1,2,1,1,1,2,1,1,1,2,2,2,2,1,2,1,2,1,1,2,2,2,1,1,2,1,1,1,2,1,1,2,1,2,1,2,2,1,1,1,1,2,2,1,1,2,2,2,2,2,1,1,1)
+/ items = (2,2,2,2,2,1,2,1,1,2,1,1,1,2,1,2,1,1,2,1,1,2,2,1,1,1,1,1,1,2,2,2,1,1,2,2,2,1,1,1,2,1,1,2,1,1,1,2,1,1,2,2,1,2,1,2,2,2,1,2,2,2,2,1,1,2,1,2,1,1,2,2,2,2,1)
 / select = current(markN11)
 </counter>
 
 <counter markN34>
-/ items = (1,2,1,2,2,2,1,1,1,2,2,2,1,1,1,2,2,2,2,2,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,2,1,1,2,1,2,2,2,1,1,2,2,1,1,2,2,1,2,2,2,2,1,1,1,1,1,2,1,1,2,1)
+/ items = (2,1,2,2,1,2,2,2,1,1,2,2,2,2,1,1,2,1,2,1,2,1,1,2,2,1,1,2,2,1,2,1,2,1,1,1,1,2,2,1,2,2,2,1,1,2,2,1,1,2,2,1,2,1,1,2,1,1,1,2,1,2,2,2,1,2,2,2,1,2,1,1,2,2,1)
 / select = current(markN11)
 </counter>
 
 <counter markN41>
-/ items = (2,2,2,1,1,1,2,1,2,2,2,1,2,1,2,1,2,1,1,1,1,1,1,2,1,2,1,2,2,2,1,2,2,2,1,1,2,2,2,1,2,2,2,1,1,2,1,2,1,1,2,2,1,1,1,2,1,1,1,1,1,1,2,2,2,2,1,2,1,1,2,2,2,1,1)
+/ items = (1,1,2,2,2,1,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,2,1,2,1,1,2,2,1,1,1,2,2,1,1,2,2,1,2,1,1,2,2,2,2,2,1,1,2,1,2,1,2,2,1,1,1,2,2,1,2,2,2,1,1,1,1,2,1,1,2,2,1,1,1)
 / select = current(markN11)
 </counter>
 
 <counter markN42>
-/ items = (1,1,2,1,1,2,2,1,1,1,1,2,2,2,1,1,1,1,1,1,1,2,2,1,2,2,2,2,2,2,1,1,2,1,1,1,1,2,1,1,2,2,1,2,2,2,1,1,2,1,1,2,2,2,2,2,1,1,1,1,2,1,1,2,2,1,1,2,2,2,1,1,2,1,2)
+/ items = (2,2,2,2,1,1,1,1,2,1,1,1,2,1,2,2,2,1,2,2,1,1,1,1,2,2,1,2,2,1,2,2,1,2,1,1,1,1,2,2,2,1,2,1,2,1,2,2,2,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,1,2,2,2,2,2,2,1)
 / select = current(markN11)
 </counter>
 
 <counter markN43>
-/ items = (1,1,2,1,1,1,1,2,1,1,1,1,2,1,2,2,1,1,2,1,2,2,2,2,2,1,1,2,1,2,1,1,2,2,2,2,2,2,1,1,1,1,2,1,1,2,2,1,2,2,1,2,1,1,2,1,2,2,1,1,2,1,2,1,2,2,2,2,1,1,1,2,1,2,1)
+/ items = (1,1,2,1,1,2,1,1,1,1,1,2,1,2,1,2,1,2,1,1,1,1,2,1,2,2,2,2,1,2,2,2,1,1,1,1,2,1,1,1,1,1,2,1,2,2,2,1,2,1,2,2,1,2,2,2,1,1,2,2,2,1,1,1,2,1,2,1,2,1,1,1,1,1,2)
 / select = current(markN11)
 </counter>
 
 <counter markN44>
-/ items = (2,1,1,2,1,1,2,1,1,2,2,2,1,2,2,1,1,2,1,1,1,2,2,1,1,1,1,2,2,2,1,2,2,2,2,1,2,2,2,2,1,2,2,2,2,2,1,1,1,1,2,2,1,1,1,2,1,1,1,2,1,2,2,2,1,2,2,1,1,1,1,2,1,1,2)
+/ items = (2,1,1,1,2,1,2,1,1,1,1,2,2,1,2,2,1,2,2,2,2,2,1,2,1,2,2,1,2,1,1,2,2,1,1,2,1,2,1,2,1,2,1,2,1,1,2,1,2,1,2,2,1,1,1,1,2,1,1,1,2,1,1,2,1,1,2,1,1,1,2,1,2,1,1)
 / select = current(markN11)
 </counter>
 
@@ -274,7 +276,7 @@
 # Trial
 
 <counter trialTarget>
-/ items = (1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,0,1,1,0,1,0,0,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1,1,1)
+/ items = (0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,0,1,1,0,0,1,1,1,1,1,1,1,1,0,0,1,1,1,0,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,0,0,0,0,0)
 / select = current(markN11)
 </counter>
 
@@ -298,6 +300,8 @@
 	values.markN44=counter.markN44.selectedvalue;
 	values.trialTarget= counter.trialTarget.selectedvalue;
 	values.audioTarget=counter.audioTarget.selectedvalue;
+	if(trial.Show.count == 1 && values.audioTarget == 1) values.trialTarget = 0;
+	if(trial.Show.count == 1 && values.audioTarget == 1) values.audioTarget = 0;
 	if(values.audioTarget) values.currentTone = values.lastTone;
 	if(!values.audioTarget && values.lastTone == 1) values.currentTone = 2;
 	if(!values.audioTarget && values.lastTone == 2) values.currentTone = 1;
@@ -305,29 +309,57 @@
 / stimulustimes = [500=N11,N12,N13,N14,N21,N22,N23,N24,N31,N32,N33,N34,N41,N42,N43,N44; 500=A]
 / inputdevice = keyboard
 / validresponse = (" ")
-/ iscorrectresponse = [values.trialTarget && trial.Show.response == 57 || ! values.trialTarget && trial.Show.response == 0]
-/ recorddata = true
+/ iscorrectresponse = [values.trialTarget && trial.Show.response == 57 || !values.trialTarget && trial.Show.response == 0]
 / timeout = values.trialTimeout
 / ontrialend = [
 	values.lastTone = values.currentTone
 ]
 </trial>
 
-# Block
+# Pages
 
-<page IPage>
+# SPACE = 57
+# Esc = 1
+<instruct>
+/ nextkey = (57)
+/ nextlabel = "Szóköz: Következõ lap"
+/ prevkey = (1)
+/ prevlabel = "Esc: Elõzõ lap"
+</instruct>
+
+<page task>
 A teszt két feladatból Áll.
 ^^Az egyik feladat:
 ^A képernyõ egy részén változó számú keresztek fognak megjeleni. 
-Ha ezek a keresztek egy négyzetet alkotnak, kérem, nyomja meg a szóköz ( space) billentyût, amilyen gyorsan csak lehet.
+Ha ezek a keresztek egy NÉGYZETET alkotnak, kérem, nyomja meg a SZÓKÖZ ( space) billentyût, amilyen gyorsan csak lehet.
 ^^A másik feladat:
-^Ebben a feladatban magas és mély tónusú szekvenciákat fog hallani. 
-Ha az egyik szekvenciát kétszer egymás után hallja kérem , nyomja le a szóköz (space) billentyût amilyen gyorsan tudja.
-^^Az ön feladata, hogy a hangokra és a négyzetekre egyszerre figyeljen
+^Ebben a feladatban MAGAS és MÉLY tónusú szekvenciákat fog hallani. 
+Ha az egyik szekvenciát KÉTSZER EGYMÁS UTÁN hallja kérem , nyomja le a SZÓKÖZ (space) billentyût amilyen gyorsan tudja.
+^^Az ön feladata, hogy a hangokra és a négyzetekre EGYSZERRE figyeljen
 </page>
 
-<block mblock>
-/ preinstructions = (IPage)
+<page practice>
+A teszt kezdése elõtt lehetõsége van egy rövid gyakorlással felkészülni.
+^^ A most következõ próbák NEM BEFOLYÁSOLJÁK a teszt eredményét.
+</page>
+
+<page test>
+A gyakorlás befejezõdött, a tesz érdemi része most kezdõdik.
+</page>
+
+# Blocks
+
+<block test>
+/ onblockbegin = [
+	counter.markN11.selectionmode = values.noreplace;
+	instruct.finishlabel = "Szóköz: Teszt";
+]
+/ preinstructions = (test)
+/ trials = [1-75=Show]
+/ recorddata = true
+</block>
+
+<block practice>
 / onblockbegin = [
 	values.posV1 = expressions.posV1;
 	values.posV2 = expressions.posV2;
@@ -337,10 +369,20 @@ Ha az egyik szekvenciát kétszer egymás után hallja kérem , nyomja le a szóköz (s
 	values.posH2 = expressions.posH2;
 	values.posH3 = expressions.posH3;
 	values.posH4 = expressions.posH4;
+	counter.markN11.selectionmode = values.sequence;
+	instruct.finishlabel = "Szóköz: Gyakorlás";
 ]
-/ trials = [1-75=Show]
+/ preinstructions = (task, practice)
+/ trials = [1-9=Show]
+/ recorddata = false
 </block>
 
 <data>
 / format = comma
 </data>
+
+# Experiment
+
+<expt exptname>
+/ blocks=[1=practice; 2=test]
+</expt>
