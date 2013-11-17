@@ -300,8 +300,8 @@
 	values.markN44=counter.markN44.selectedvalue;
 	values.trialTarget= counter.trialTarget.selectedvalue;
 	values.audioTarget=counter.audioTarget.selectedvalue;
-	if(trial.Show.count == 1 && values.audioTarget == 1) values.trialTarget = 0;
-	if(trial.Show.count == 1 && values.audioTarget == 1) values.audioTarget = 0;
+	if(trial.Show.count == 0 && values.audioTarget == 1) values.trialTarget = 0;
+	if(trial.Show.count == 0 && values.audioTarget == 1) values.audioTarget = 0;
 	if(values.audioTarget) values.currentTone = values.lastTone;
 	if(!values.audioTarget && values.lastTone == 1) values.currentTone = 2;
 	if(!values.audioTarget && values.lastTone == 2) values.currentTone = 1;
@@ -377,12 +377,23 @@ A gyakorlás befejezõdött, a tesz érdemi része most kezdõdik.
 / recorddata = false
 </block>
 
-<data>
-/ format = comma
-</data>
-
 # Experiment
 
 <expt exptname>
 / blocks=[1=practice; 2=test]
 </expt>
+
+<data>
+/ columns = [
+	date, time, build, subject, trialcode, blockcode, trialnum, latency, response, correct,
+    values.trialTarget, values.audioTarget, 
+	values.markN11, values.markN12, values.markN13, values.markN14,
+	values.markN21, values.markN22, values.markN23, values.markN24,
+	values.markN31, values.markN32, values.markN33, values.markN34,
+	values.markN41, values.markN42, values.markN43, values.markN44,
+	meanlatency, medianlatency, sumlatency, minlatency, maxlatency, sdlatency, varlatency, numcorrect, percentcorrect, correctstreak, errorstreak, 
+	
+]
+/ format = comma
+</data>
+
