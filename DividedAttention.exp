@@ -387,6 +387,7 @@ A gyakorlás befejezõdött, a tesz érdemi része most kezdõdik.
 / columns = [
 	date, time, build, subject, trialcode, blockcode, trialnum, latency, response, correct,
     values.trialTarget, values.audioTarget, 
+	values.currentTone,
 	values.markN11, values.markN12, values.markN13, values.markN14,
 	values.markN21, values.markN22, values.markN23, values.markN24,
 	values.markN31, values.markN32, values.markN33, values.markN34,
